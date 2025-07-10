@@ -8,7 +8,7 @@ import java.time.LocalDateTime;
 import java.util.Objects;
 
 @Entity
-public class Notification_task {
+public class NotificationTask {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -52,7 +52,7 @@ public class Notification_task {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Notification_task that = (Notification_task) o;
+        NotificationTask that = (NotificationTask) o;
         return Objects.equals(id, that.id) && Objects.equals(chatId, that.chatId) &&
                 Objects.equals(notificationLocalDateTime, that.notificationLocalDateTime) &&
                 Objects.equals(notificationMessage, that.notificationMessage);
