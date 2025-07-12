@@ -1,19 +1,21 @@
 package pro.sky.telegrambot.notification;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.Objects;
 
 @Entity
+@Table
 public class NotificationTask {
     @Id
+    @Column
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Column
     private Long chatId;
+    @Column
     private LocalDateTime notificationLocalDateTime;
+    @Column
     private String notificationMessage;
 
     public Long getId() {
@@ -57,6 +59,7 @@ public class NotificationTask {
                 Objects.equals(notificationLocalDateTime, that.notificationLocalDateTime) &&
                 Objects.equals(notificationMessage, that.notificationMessage);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(id, chatId, notificationLocalDateTime, notificationMessage);
